@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
+    @State private var showingSheet = false
+   var body: some View {
+       Button("Hello!") {
+           showingSheet.toggle()
+           
+       }
+    
+       .sheet(isPresented: $showingSheet) {
+           SecondView()
+           }
     }
 }
 
